@@ -1,0 +1,17 @@
+{
+  "name": "base-apparel-coming-soon",
+  "version": "1.0.0",
+  "homepage": "https://predeyo.github.io/base-apparel-coming-soon",
+  "description": "Design preview for the Base Apparel coming soon page coding challenge",
+  "scripts": {
+    "start": "npm run build && node-sass src/ -o public/ --watch --recursive",
+    "build": "node-sass src/ -o public/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
