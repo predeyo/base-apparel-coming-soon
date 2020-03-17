@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap");
+@import url("reset.css");
+body {
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  color: #413a3a; }
+
+.logo {
+  height: 20px;
+  width: 100px;
+  margin: 32px; }
+
+.hero-mobile {
+  max-width: 800px; }
+
+.call-to-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 32px 0 32px;
+  text-align: center; }
+  .call-to-action h1 {
+    color: #ce9797;
+    max-width: 80%;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 2.5rem;
+    letter-spacing: 0.65rem;
+    line-height: 2.64rem;
+    margin-bottom: 16px; }
+    .call-to-action h1 span {
+      display: block;
+      color: #413a3a;
+      font-weight: 600; }
+  .call-to-action p {
+    margin: 0 0 33px 0;
+    max-width: calc(800px - 32px * 2);
+    color: #ce9797;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.35rem; }
+  .call-to-action .input-block {
+    width: 100%;
+    margin-bottom: calc(1.35rem + 32px); }
+    .call-to-action .input-block .input-wrapper {
+      display: flex;
+      align-items: center;
+      height: 46px;
+      width: calc(100% - 2px);
+      border: 1px solid #ce9797;
+      border-right: none;
+      border-radius: calc(46px / 2); }
+      .call-to-action .input-block .input-wrapper input {
+        flex: 1 1 auto;
+        color: #413a3a;
+        background: transparent;
+        margin-left: 23px;
+        height: 100%;
+        min-width: 100px;
+        border: none; }
+        .call-to-action .input-block .input-wrapper input::placeholder {
+          color: #ce9797; }
+        .call-to-action .input-block .input-wrapper input:invalid {
+          box-shadow: none; }
+      .call-to-action .input-block .input-wrapper .icon-error {
+        display: none;
+        width: 24px;
+        height: 24px;
+        margin: 0 10px; }
+      .call-to-action .input-block .input-wrapper button {
+        width: 64px;
+        border: none;
+        height: calc(100% + 2px);
+        border-radius: calc(46px / 2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #f8bfbf 0%, #ee8c8c 100%);
+        box-shadow: 0px 12px 12px 3px rgba(248, 191, 191, 0.5); }
+        .call-to-action .input-block .input-wrapper button img {
+          width: 10px;
+          height: 20px; }
+    .call-to-action .input-block .error-message {
+      display: none;
+      margin: 10px 24px;
+      color: #f96262;
+      font-weight: 400;
+      font-size: 0.9rem;
+      line-height: 1.35rem; }
+    .call-to-action .input-block.error .icon-error {
+      display: block; }
+    .call-to-action .input-block.error .error-message {
+      display: block; }
+
+footer {
+  text-align: center;
+  color: #ce9797;
+  font-weight: 300;
+  margin-bottom: 32px; }
+  footer p {
+    margin: 0; }
+  footer span {
+    font-weight: 400; }
+
+.hero-desktop {
+  display: none; }
+
+@media screen and (min-width: 800px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .call-to-action .input-block {
+    width: 70%; } }
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+@supports (grid-area: auto) {
+  @media screen and (min-width: 1440px) {
+    body {
+      justify-content: center;
+      height: 100vh; }
+    .card {
+      height: 800px;
+      width: 1440px;
+      display: flex;
+      box-shadow: 0 4px 2px -2px rgba(204, 102, 102, 0.2), 0 2px 2px 0 rgba(204, 102, 102, 0.14), 0 2px 6px 0 rgba(204, 102, 102, 0.12), 4px 0 2px -2px rgba(204, 102, 102, 0.2); }
+      .card .content {
+        position: relative;
+        flex-direction: unset;
+        align-items: unset;
+        display: grid;
+        grid-template-columns: 444px;
+        grid-template-rows: 165px 515px auto;
+        grid-template-areas: " logo" " content" " footer";
+        background-image: url("images/bg-pattern-desktop.svg");
+        background: cover;
+        padding: 65px 220px 30px 166px; }
+        .card .content::before {
+          content: " ";
+          position: absolute;
+          background: linear-gradient(135deg, white 0%, #fff5f5 100%);
+          background: cover;
+          width: 100%;
+          height: 100%;
+          z-index: -1; }
+        .card .content > * {
+          margin: 0;
+          padding: 0;
+          max-width: 100%; }
+        .card .content .hero-mobile {
+          display: none; }
+        .card .content .logo {
+          grid-area: logo;
+          height: 32px;
+          width: 160px; }
+        .card .content .call-to-action {
+          grid-area: content;
+          text-align: left; }
+          .card .content .call-to-action h1 {
+            max-width: 100%;
+            margin: 0 0 21px 0;
+            font-size: 3.8rem;
+            letter-spacing: 1.25rem;
+            line-height: 4.3rem; }
+          .card .content .call-to-action p {
+            font-size: 1rem;
+            line-height: 1.75rem;
+            letter-spacing: 0.005rem;
+            margin-bottom: 40px; }
+          .card .content .call-to-action form {
+            width: 100%; }
+            .card .content .call-to-action form .input-block {
+              width: inherit; }
+              .card .content .call-to-action form .input-block .input-wrapper {
+                height: 54px;
+                border-radius: calc(56px / 2); }
+                .card .content .call-to-action form .input-block .input-wrapper input {
+                  margin-left: 32px; }
+                .card .content .call-to-action form .input-block .input-wrapper button {
+                  width: 97px; }
+        .card .content footer {
+          grid-area: footer; }
+      .card .hero-desktop {
+        display: block; } } }
